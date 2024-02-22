@@ -1,0 +1,230 @@
+:root {
+  /* Layout */
+  --mobile-width: 375px;
+  --desktop-width: 1440px;
+
+  /* Theme 1 */
+  /* Backgrounds */
+  --main-background-theme1: hsl(222, 26%, 31%);
+  --toggle-background-theme1: hsl(223, 31%, 20%);
+  --keypad-background-theme1: hsl(223, 31%, 20%);
+  --screen-background-theme1: hsl(224, 36%, 15%);
+
+  /* Keys */
+  --key-background-theme1: hsl(225, 21%, 49%);
+  --key-shadow-theme1: hsl(224, 28%, 35%);
+  --red-key-background-theme1: hsl(6, 63%, 50%);
+  --red-key-shadow-theme1: hsl(6, 70%, 34%);
+  --orange-key-background-theme1: hsl(30, 25%, 89%);
+  --orange-key-shadow-theme1: hsl(28, 16%, 65%);
+
+  /* Text */
+  --text-dark-theme1: hsl(221, 14%, 31%);
+  --text-light-theme1: hsl(0, 0%, 100%);
+
+  /* Theme 2 */
+  /* Backgrounds */
+  --main-background-theme2: hsl(0, 0%, 90%);
+  --toggle-background-theme2: hsl(0, 5%, 81%);
+  --keypad-background-theme2: hsl(0, 5%, 81%);
+  --screen-background-theme2: hsl(0, 0%, 93%);
+
+  /* Keys */
+  --key-background-theme2: hsl(180, 100%, 50%);
+  --key-shadow-theme2: hsl(185, 58%, 25%);
+  --red-key-background-theme2: hsl(25, 98%, 40%);
+  --red-key-shadow-theme2: hsl(25, 99%, 27%);
+  --orange-key-background-theme2: hsl(45, 7%, 89%);
+  --orange-key-shadow-theme2: hsl(35, 11%, 61%);
+
+  /* Text */
+  --text-dark-theme2: hsl(60, 10%, 19%);
+  --text-light-theme2: hsl(0, 0%, 100%);
+
+  /* Theme 3 */
+  /* Backgrounds */
+  --main-background-theme3: hsl(268, 75%, 9%);
+  --toggle-background-theme3: hsl(268, 71%, 12%);
+  --keypad-background-theme3: hsl(268, 71%, 12%);
+  --screen-background-theme3: hsl(268, 71%, 12%);
+
+  /* Keys */
+  --key-background-theme3: hsl(281, 89%, 26%);
+  --key-shadow-theme3: hsl(285, 91%, 52%);
+  --red-key-background-theme3: hsl(176, 100%, 44%);
+  --red-key-shadow-theme3: hsl(177, 92%, 70%);
+  --orange-key-background-theme3: hsl(268, 47%, 21%);
+  --orange-key-shadow-theme3: hsl(290, 70%, 36%);
+
+  /* Text */
+  --text-dark-theme3: hsl(198, 20%, 13%);
+  --text-light-theme3: hsl(0, 0%, 100%);
+
+  /* Typography */
+  /* Body Copy */
+  --font-size-numbers: 32px;
+
+  /* Font */
+  --font-family: 'League Spartan', sans-serif;
+  --font-weight: 700;
+}
+
+
+.app {
+  width: 100vw;
+  min-height: 100vh;
+  background: var(--main-background-theme1);
+  padding: 2rem;
+}
+
+.container {
+  max-width: 400px;
+  margin: 0 auto;
+}
+
+.app .container header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 2rem;
+}
+
+
+.app .title {
+  font-size: 45px;
+}
+
+/* THEME TOGGLER */
+.theme-switcher {
+  display: flex;
+  align-items: end;
+  gap: 1rem;
+  padding: 1rem;
+}
+
+.theme-switcher p {
+  font-size: 12px;
+
+}
+
+.theme-switcher .toggle {
+  width: 3.5rem;
+}
+
+.theme-switcher .toggle input {
+  width: 100%;
+}
+
+input[type="range"] {
+  appearance: none;
+  -webkit-appearance: none;
+  background: transparent;
+  cursor: pointer;
+}
+
+input[type="range"]::-webkit-slider-runnable-track {
+ background: var(--toggle-background-theme1);
+ height: 1rem;
+ border-radius: 1rem;
+ padding: 0 0.2rem;
+}
+
+input[type="range"][value="1"]::-webkit-slider-runnable-track {
+  background: var(--toggle-background-theme2);
+}
+input[type="range"][value="2"]::-webkit-slider-runnable-track {
+  background: var(--toggle-background-theme3);
+}
+
+
+input[type="range"]::-webkit-slider-thumb {
+-webkit-appearance: none;
+appearance: none;
+background-color: var(--red-key-background-theme1);
+height: 0.7rem;
+width: 0.7rem;
+border-radius: 50%;
+margin-top: 2px;
+}
+
+input[type="range"][value="2"]::-webkit-slider-thumb {
+  background-color: var(--key-background-theme2);
+}
+
+
+.theme-switcher .toggle .theme-number {
+  padding: 0 0.5rem;
+  display: flex;
+  justify-content: space-between;
+  margin: 0 0 0.5rem;
+}
+
+.display {
+  width: 100%;
+  max-width: 500px;
+  height: 6rem;
+  border-radius: 15px;
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+}
+
+.display .equation {
+  font-size: 3rem;
+  font-weight: 700;
+  padding: 1rem;
+  text-align: right;
+}
+
+.numpad {
+  width: 100%;
+  height: 400px;
+  background-color: var(--keypad-background-theme1);
+  margin: 1rem 0 0;
+  padding: 1rem;
+  border-radius: 15px;
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  grid-template-rows: repeat(5, 1fr);
+  gap: 1rem;
+  
+}
+
+.numpad .button {
+  background-color: var(--orange-key-background-theme1);
+  color: var(--text-dark-theme1);
+  font-size: 30px;
+  font-weight: 900;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 10px;
+  cursor: pointer; 
+}
+
+.numpad .button:hover {
+  background-color: white;
+}
+
+.btn-2 {
+  grid-column: span 2;
+}
+
+:nth-child(1 of .btn-2), :nth-child(4 of .btn-1) {
+  background-color: var(--key-background-theme1)!important;
+  color: white;
+}
+
+:nth-child(1 of .btn-2):hover, :nth-child(4 of .btn-1):hover {
+  background-color: var(--key-shadow-theme1)!important;
+
+}
+
+:nth-child(2 of .btn-2) {
+  background-color: var(--red-key-background-theme1)!important;
+  color: white;
+}
+
+:nth-child(2 of .btn-2):hover {
+  background-color: var(--red-key-shadow-theme1)!important;
+}
